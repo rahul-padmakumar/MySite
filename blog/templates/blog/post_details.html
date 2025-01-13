@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{name}}
+{% endblock title %}
+
+{% block  css_files %}
+    <link rel="stylesheet" href="blog/post-details.css">
+{% endblock  %}
+
+{% block  content %}
+    <section id="summary">
+        <h2>{{name}}</h2>
+        <article>
+            <img src="{% static "/blog/images/mountains.jpg" %}" alt=""/>
+            <address>By Rahul</address>
+            <div>
+                Last updated on Jan 10th
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+    </main>
+{% endblock  %}

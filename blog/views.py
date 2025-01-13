@@ -10,4 +10,4 @@ def all_posts(req):
     return render(req, "blog/all_posts.html")
 
 def individual_post(req, post_name):
-    return HttpResponse(f"Post name is: {post_name}")
+    return render(req, "blog/post_details.html", {"name": post_name})
