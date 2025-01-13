@@ -1,5 +1,47 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/post-detail.css" %}">
+{% endblock %}
+
 {% block title %}My Blog{% endblock  %}
+
 {% block content %}
-    <h1>Latest posts</h1>
+    <header id="main-navigation">
+        <h1><a href="">My Blog</a></h1>
+        <nav>
+            <a href="{% url "posts_page" %}">All Posts</a>
+        </nav>
+    </header>
+    <section id="welcome">
+        <header>
+            <img src="" alt="Author of the blog"/>
+            <h1>Author Name</h1>
+        </header>
+        <p>Blog about nature</p>
+    </section>
+    <section id="latest-posts">
+        <h2> My latest posts </h2>
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="" alt="Mountain Hiking"/>
+                    </a>
+                    <div class="post_content">
+                        <h3> First Blog </h3>
+                        <p> Lorem ipsum </p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </section>
+    <section id="about">
+        <h2> What do I do? </h2>
+        <p> Info about me </p>
+        <p> My goals are abc </p>
+    </section>
 {% endblock content %}
