@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{name}}
+{{identified_post.title}}
 {% endblock title %}
 
 {% block  css_files %}
@@ -11,22 +11,17 @@
 
 {% block  content %}
     <section id="summary">
-        <h2>{{name}}</h2>
+        <h2>{{identified_post.title}}</h2>
         <article>
-            <img src="{% static "/blog/images/mountains.jpg" %}" alt=""/>
-            <address>By Rahul</address>
+            <img src="{% static "/blog/images/"|add:identified_post.img %}" alt={{identified_post.title}}/>
+            <address>By {{identified_post.author}}</address>
             <div>
-                Last updated on Jan 10th
+                Last updated on {{identified_post.date|date:"d M Y"}}
             </div>
         </article>
     </section>
 
     <main>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam vero labore quo consectetur veritatis odit, maiores amet perspiciatis perferendis. Quibusdam harum repudiandae qui ut explicabo voluptates inventore aliquam suscipit.</p>
+       {{identified_post.content|linebreaks}}
     </main>
 {% endblock  %}
