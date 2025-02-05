@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from datetime import date
 from .models import Post
 from django.views.generic import ListView, DeleteView
+from .forms import CommentForm
 
 # Create your views here.
 
@@ -29,6 +30,7 @@ class POSTDetailView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["tags"] = self.get_object().tag.all()
+        context["form"] = CommentForm()
         return context
     
 
