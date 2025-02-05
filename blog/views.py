@@ -15,13 +15,15 @@ class StartPageView(ListView):
         query = super().get_queryset()
         data = query[:3]
         return data
+    
+class AllPostView(ListView):
+    template_name = "blog/all_posts.html"
+    model = Post
+    context_object_name = "all_posts"
+    ordering = "-date"
 
 def get_date(post):
     return post['date']
-
-def all_posts(req):
-    posts = Post.objects.all().order_by("-date")
-    return render(req, "blog/all_posts.html", {"all_posts": posts})
 
 def individual_post(req, slug):
     post = Post.objects.get(slug = slug)
