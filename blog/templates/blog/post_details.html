@@ -13,7 +13,7 @@
     <section id="summary">
         <h2>{{identified_post.title}}</h2>
         <article>
-            <img src="{% static "/blog/images/"|add:identified_post.image %}" alt={{identified_post.title}}/>
+            <img src="{{identified_post.image.url}}" alt={{identified_post.title}}/>
             <address><a href="mailto:{{identified_post.author.email_address}}?subject=Subject&body=Body">By {{identified_post.author}}</a></address>
             <div>
                 {% for tag in tags %}
