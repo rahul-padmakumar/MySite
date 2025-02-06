@@ -12,6 +12,10 @@
 {% block  content %}
     <section id="summary">
         <h2>{{identified_post.title}}</h2>
+        <form action="/read_later" method="POST">
+            <input type="hidden" name="post_id" value="{{identified_post.id}}">
+            <button>Read Later</button>
+        </form>
         <article>
             <img src="{{identified_post.image.url}}" alt={{identified_post.title}}/>
             <address><a href="mailto:{{identified_post.author.email_address}}?subject=Subject&body=Body">By {{identified_post.author}}</a></address>
