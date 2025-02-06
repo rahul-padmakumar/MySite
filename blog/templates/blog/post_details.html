@@ -13,8 +13,14 @@
     <section id="summary">
         <h2>{{identified_post.title}}</h2>
         <form action="/read_later" method="POST">
+            {% csrf_token %}
             <input type="hidden" name="post_id" value="{{identified_post.id}}">
-            <button>Read Later</button>
+            <button>{% if is_saved_post %}
+                    Remove From Read Later
+                    {% else %}
+                    Read Later
+                {% endif %}
+            </button>
         </form>
         <article>
             <img src="{{identified_post.image.url}}" alt={{identified_post.title}}/>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Read Later Posts{% endblock  %}
+{% block content %}
+    {% if not has_saved_posts %}
+        <p> No saved posts </p>
+    {% endif %}
+    <ul>
+        {% for post in saved_posts %}
+            <li><a href={% url "posts_detail_page" post.slug%}>{{post.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock  %}
